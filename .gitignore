@@ -1,0 +1,52 @@
+# OS / Editors
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+.cache/
+coverage/
+*.log
+npm-debug.log*
+yarn-*.log*
+pnpm-debug.log*
+.eslintcache
+
+# Python / Backend
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+.coverage*
+htmlcov/
+
+# Env & Secrets
+.env
+.env.*
+backend/.env
+frontend/.env
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+
+# DB & Local artifacts
+*.sqlite
+*.sqlite3
+backend/app/data.db
+logs/
+tmp/

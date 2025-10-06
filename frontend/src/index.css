@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === THEME TOKENS === */
+:root{
+  --bg: 210 20% 99%;
+  --card: 0 0% 100%;
+  --border: 210 16% 90%;
+  --text: 222 47% 11%;
+  --soft: 215 16% 96%;
+  --brand: 222 88% 54%;
+  --brand-fg: 0 0% 100%;
+  --brand-muted: 222 86% 96%;
+}
+
+.dark{
+  --bg: 222 47% 6%;
+  --card: 222 47% 8%;
+  --border: 222 25% 18%;
+  --text: 210 40% 98%;
+  --soft: 222 30% 12%;
+  --brand: 222 88% 60%;
+  --brand-fg: 0 0% 100%;
+  --brand-muted: 222 40% 18%;
+}
+
+/* === BASE LAYER === */
+@layer base{
+  html, body, #root{ height: 100%; }
+  body{ @apply bg-[hsl(var(--bg))] text-[hsl(var(--text))] antialiased; }
+}
+
+/* === COMPONENTS === */
+@layer components{
+  .card{ @apply rounded-xl bg-[hsl(var(--card))] border border-[hsl(var(--border))] shadow-sm; }
+  .card-head{ @apply p-4 border-b border-[hsl(var(--border))]; }
+  .card-body{ @apply p-4; }
+
+  .btn{ @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition active:scale-95; }
+  .btn-primary{ @apply btn bg-[hsl(var(--brand))] text-[hsl(var(--brand-fg))] hover:opacity-95; }
+  .btn-outline{ @apply btn border border-[hsl(var(--border))] hover:bg-[hsl(var(--soft))]; }
+  .btn-ghost{ @apply btn bg-transparent hover:bg-[hsl(var(--soft))] border border-[hsl(var(--border))]; }
+
+  .input{ @apply w-full rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--card))] px-3 py-2 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--brand))/40]; }
+  .badge{ @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs bg-[hsl(var(--soft))] border border-[hsl(var(--border))]; }
+}
